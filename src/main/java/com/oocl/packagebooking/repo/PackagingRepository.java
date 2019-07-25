@@ -9,7 +9,9 @@ import org.springframework.data.repository.query.Param;
 public interface PackagingRepository extends JpaRepository<Packaging, String> {
 
     @Modifying
-    @Query("update Packaging as packaging set packaging.status = 'haspick' where packaging.id = :id")
+    @Query("update Packaging as packaging set packaging.status = '已取件' where packaging.id = :id")
     void changePackStatus(@Param("id") String id);
+
+    Packaging findByBillno(String billno);
 
 }

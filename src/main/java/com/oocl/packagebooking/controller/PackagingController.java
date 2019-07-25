@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.transaction.Transactional;
 import java.util.List;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/pack")
 public class PackagingController {
@@ -36,5 +37,7 @@ public class PackagingController {
     public Packaging changPackStatus(@PathVariable(value = "id")String id) {
         return packagingService.updatePackStatus(id);
     }
+
+
 
 }

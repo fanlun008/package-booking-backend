@@ -1,6 +1,7 @@
 package com.oocl.packagebooking.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
@@ -31,13 +32,13 @@ public class Packaging {
     private String phonenum;
 
     @Column
-    private String status = "nopick";
+    private String status = "未取件";
 
     @Column
+//    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date apptime;
 
     @Column
     private Integer weight;
-
 
 }
